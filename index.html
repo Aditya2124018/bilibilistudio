@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilibili Studio — Coming Soon</title>
+  <meta name="description" content="Bilibili Studio is preparing something bold. Stay tuned for our upcoming launch.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#FFD84D">
+  <link rel="canonical" href="https://bilibili-studio.com/">
+
+  <!-- Open Graph / Social SEO -->
+  <meta property="og:title" content="Bilibili Studio">
+  <meta property="og:description" content="Something bold is coming from Bilibili Studio.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bilibili-studio.com/">
+  <meta property="og:image" content="https://example.com/og-image.jpg">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bilibili Studio — Coming Soon">
+  <meta name="twitter:description" content="Something bold is coming from Bilibili Studio.">
+  <meta name="twitter:image" content="https://example.com/og-image.jpg">
+
+  <!-- Structured Data / SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Bilibili Studio",
+    "url": "https://example.com/",
+    "description": "Bilibili Studio — coming soon."
+  }
+  </script>
+
+  <!--
+    GOOGLE ADSENSE:
+    1. Paste your AdSense verification script below if/when your site is approved.
+    2. Replace ca-pub-XXXXXXXXXXXXXXXX with your real publisher ID.
+  -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <style>
+    :root {
+      --yellow: #ffd84d;
+      --cream: #fff8df;
+      --black: #111111;
+      --white: #ffffff;
+      --pink: #ff7bac;
+      --blue: #72d6ff;
+      --green: #83e28c;
+      --shadow: 8px 8px 0 var(--black);
+      --border: 4px solid var(--black);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--black);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    .nav {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      display: inline-block;
+      border: var(--border);
+      background: var(--yellow);
+      padding: 10px 16px;
+      font-weight: 1000;
+      font-size: 1.25rem;
+      box-shadow: 5px 5px 0 var(--black);
+      transform: rotate(-1deg);
+    }
+
+    .nav-badge {
+      border: 3px solid var(--black);
+      background: var(--white);
+      padding: 8px 12px;
+      font-weight: 900;
+      box-shadow: 4px 4px 0 var(--black);
+    }
+
+    .hero {
+      padding: 55px 0 80px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--pink);
+      border: var(--border);
+      padding: 8px 15px;
+      font-weight: 1000;
+      box-shadow: 5px 5px 0 var(--black);
+      transform: rotate(1deg);
+    }
+
+    h1 {
+      font-size: clamp(3.5rem, 10vw, 8.5rem);
+      line-height: .86;
+      letter-spacing: -0.07em;
+      margin: 30px 0 25px;
+      font-weight: 1000;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--yellow);
+      -webkit-text-stroke: 3px var(--black);
+      text-shadow: 7px 7px 0 var(--black);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0 auto 38px;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      font-weight: 700;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin: 35px auto;
+      max-width: 920px;
+    }
+
+    .unit {
+      border: var(--border);
+      background: var(--white);
+      padding: 24px 12px;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--shadow);
+    }
+
+    .unit:nth-child(2) { background: var(--blue); }
+    .unit:nth-child(3) { background: var(--pink); }
+    .unit:nth-child(4) { background: var(--green); }
+
+    .number {
+      font-size: clamp(2.7rem, 7vw, 5.2rem);
+      line-height: 1;
+      font-weight: 1000;
+      letter-spacing: -0.06em;
+    }
+
+    .label {
+      margin-top: 12px;
+      text-transform: uppercase;
+      font-weight: 1000;
+      letter-spacing: .1em;
+      font-size: .85rem;
+    }
+
+    .note {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--black);
+      color: var(--white);
+      padding: 8px 13px;
+      font-weight: 800;
+    }
+
+    .section {
+      padding: 35px 0 85px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 28px;
+    }
+
+    .card {
+      border: var(--border);
+      background: var(--white);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .card.alt { background: var(--yellow); }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 1000;
+    }
+
+    .card p {
+      font-weight: 650;
+      font-size: 1.05rem;
+    }
+
+    .features {
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .features li {
+      border-top: 3px solid var(--black);
+      padding: 12px 0;
+      font-weight: 900;
+    }
+
+    .features li::before {
+      content: "→ ";
+      font-size: 1.2rem;
+    }
+
+    .footer {
+      border-top: var(--border);
+      padding: 30px 0 45px;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer strong { color: var(--yellow); }
+
+    .admin-panel {
+      margin: 0 auto 50px;
+      max-width: 920px;
+      border: var(--border);
+      padding: 25px;
+      background: #eaeaea;
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+
+    .admin-panel h2 { margin-top: 0; }
+
+    .admin-panel label {
+      display: block;
+      font-weight: 900;
+      margin: 12px 0 6px;
+    }
+
+    .admin-panel input {
+      width: 100%;
+      border: 3px solid var(--black);
+      padding: 12px;
+      font: inherit;
+      font-weight: 800;
+      background: var(--white);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    button {
+      border: 3px solid var(--black);
+      background: var(--yellow);
+      padding: 12px 18px;
+      font: inherit;
+      font-weight: 1000;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 var(--black);
+    }
+
+    button:active {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0 var(--black);
+    }
+
+    .status {
+      margin-top: 12px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 760px) {
+      .countdown { grid-template-columns: repeat(2, 1fr); }
+      .grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .hero { padding-top: 35px; }
+    }
+
+    @media (max-width: 430px) {
+      .wrap { width: min(100% - 22px, 1120px); }
+      .countdown { gap: 12px; }
+      .unit { min-height: 125px; padding: 18px 8px; }
+      .card { padding: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrap nav">
+    <div class="logo">BILIBILI STUDIO</div>
+    <div class="nav-badge">COMING SOON ↗</div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="eyebrow">WE'RE BUILDING SOMETHING BIG</div>
+
+      <h1>
+        THE WAIT
+        <span>IS ON.</span>
+      </h1>
+
+      <p class="lead">
+        Bilibili Studio is getting ready to launch a fresh digital experience
+        built with creativity, bold ideas, and a little bit of chaos.
+        We're putting the finishing touches on it right now.
+      </p>
+
+      <div class="countdown" aria-label="Countdown until Bilibili Studio launch">
+        <div class="unit">
+          <div class="number" id="months">05</div>
+          <div class="label">Months</div>
+        </div>
+        <div class="unit">
+          <div class="number" id="days">00</div>
+          <div class="label">Days</div>
+        </div>
+        <div class="unit">
+          <div class="number" id="hours">00</div>
+          <div class="label">Hours</div>
+        </div>
+        <div class="unit">
+          <div class="number" id="minutes">00</div>
+          <div class="label">Minutes</div>
+        </div>
+      </div>
+
+      <div class="note" id="secondsNote">And every second counts.</div>
+    </section>
+
+    <!--
+      OPTIONAL GOOGLE ADSENSE AD UNIT:
+      After AdSense approval, place your ad code inside this area.
+      Example:
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    -->
+  
+
+    <section class="section">
+      <div class="wrap grid">
+        <article class="card">
+          <h2>What's coming?</h2>
+          <p>
+            We're working behind the scenes to create a studio experience that
+            feels fast, original, and unmistakably ours. Expect a polished
+            platform, creative projects, and useful digital experiences made
+            with attention to the small details.
+          </p>
+          <p>
+            The countdown has started, but the real work is happening now.
+            Follow along and be among the first to see what Bilibili Studio
+            becomes.
+          </p>
+        </article>
+
+        <aside class="card alt">
+          <h2>Why wait?</h2>
+          <ul class="features">
+            <li>Fresh ideas</li>
+            <li>Bold visual direction</li>
+            <li>Modern digital experiences</li>
+            <li>Built for what's next</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>© <span id="year"></span> <strong>Bilibili Studio</strong>. All rights reserved.</div>
+      <!-- <div>Launching soon.</div> -->
+    </div>
+  </footer>
+
+  <script>
+   const UNIVERSAL_LAUNCH_DATE = "2027-01-24T23:59:59+05:30";
+
+
+function pad(number) {
+    return String(Math.max(0, number)).padStart(2, "0");
+}
+
+
+function updateCountdown() {
+
+    const launchDate = new Date(UNIVERSAL_LAUNCH_DATE);
+    const now = new Date();
+
+    let difference = launchDate - now;
+
+    // Countdown finished
+    if (difference <= 0) {
+
+        document.getElementById("months").textContent = "00";
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+
+        document.getElementById("secondsNote").textContent =
+            "WE'RE LIVE — welcome to Bilibili Studio!";
+
+        return;
+    }
+
+
+    /*
+    ------------------------------------------------------
+    Calculate calendar months remaining
+    ------------------------------------------------------
+    */
+
+    let months =
+        (launchDate.getFullYear() - now.getFullYear()) * 12 +
+        (launchDate.getMonth() - now.getMonth());
+
+
+    // Calculate the date after adding those months
+    let monthAnchor = new Date(now);
+
+    monthAnchor.setMonth(
+        monthAnchor.getMonth() + months
+    );
+
+
+    if (monthAnchor > launchDate) {
+        months--;
+    }
+
+
+    /*
+    ------------------------------------------------------
+    Calculate remaining days/hours/minutes/seconds
+    ------------------------------------------------------
+    */
+
+    const anchor = new Date(now);
+
+    anchor.setMonth(
+        anchor.getMonth() + Math.max(0, months)
+    );
+
+
+    const remaining =
+        Math.max(0, launchDate - anchor);
+
+
+    const days =
+        Math.floor(remaining / 86400000);
+
+
+    const hours =
+        Math.floor(
+            (remaining % 86400000) / 3600000
+        );
+
+
+    const minutes =
+        Math.floor(
+            (remaining % 3600000) / 60000
+        );
+
+
+    const seconds =
+        Math.floor(
+            (remaining % 60000) / 1000
+        );
+
+
+    /*
+    ------------------------------------------------------
+    Update website
+    ------------------------------------------------------
+    */
+
+    document.getElementById("months").textContent =
+        pad(months);
+
+    document.getElementById("days").textContent =
+        pad(days);
+
+    document.getElementById("hours").textContent =
+        pad(hours);
+
+    document.getElementById("minutes").textContent =
+        pad(minutes);
+
+
+    document.getElementById("secondsNote").textContent =
+        `${pad(seconds)} seconds left. And every second counts.`;
+}
+
+
+// Start countdown
+updateCountdown();
+
+
+// Update every second
+setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
